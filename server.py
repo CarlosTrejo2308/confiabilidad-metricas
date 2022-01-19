@@ -2,7 +2,7 @@ import time
 import random
 from wsgiref.simple_server import ServerHandler
 
-def serverMock():
+def serverMock(maxi = None):
     """
     This function is used to mock a server.
 
@@ -10,14 +10,14 @@ def serverMock():
     """
     status = False
     duration = random.randint(1, 10)
+    iteration = 0
 
-    while True:
+    while not maxi or maxi > iteration:
         for i in range(duration):
             yield status
+            iteration += 1
         duration = random.randint(1, 10)
         status = random.random() < 0.67
-
-        print("Duration: {}".format(duration))
 
 
 def main():
