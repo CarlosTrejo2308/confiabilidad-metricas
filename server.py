@@ -1,6 +1,5 @@
 import time
 import random
-from wsgiref.simple_server import ServerHandler
 
 def serverMock(maxi = None):
     """
